@@ -1,31 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Leds } from '../model/led';
+import { Color, Leds } from '../model/led';
 
 @Component({
   selector: 'pi-led-list',
   templateUrl: './led-list.component.html',
-  styleUrls: ['./led-list.component.scss']
+  styleUrls: ['./led-list.component.scss'],
 })
 export class LedListComponent implements OnInit {
-
   leds: Leds = [
     {
       index: 0,
-      color: 'red'
+      color: 'red' as Color,
     },
     {
       index: 1,
-      color: 'green'
+      color: 'green' as Color,
     },
     {
       index: 2,
-      color: 'blue'
+      color: 'blue' as Color,
     },
-  ]
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
