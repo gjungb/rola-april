@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,17 +9,9 @@ import { LedListComponent } from './led-list/led-list.component';
 import { PiColorPipe } from './shared/pi-color.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LedComponent,
-    LedListComponent,
-    PiColorPipe
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, LedComponent, LedListComponent, PiColorPipe],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

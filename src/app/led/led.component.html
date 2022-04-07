@@ -1,8 +1,8 @@
 <p>led works!</p>
 
-<h4>Index: {{ led.index + 1 }}</h4>
+<h4>Index: {{ displayIndex }}</h4>
 
-<div class="box" [ngStyle]="{backgroundColor: led.color, borderWidth: '3px'}"></div>
+<div (click)="handleClick($event)" class="box" [ngStyle]="{backgroundColor: led.color, borderWidth: '3px'}"></div>
 
 <p>{{ led.color | piColor:'rgb' | uppercase }}</p>
 
