@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, takeUntil, tap, timer } from 'rxjs';
-import { Leds } from '../model/led';
+import { Color, Leds } from '../model/led';
 import { LedService } from '../shared/led.service';
 
 @Component({
@@ -48,7 +48,7 @@ export class LedListComponent implements OnInit, OnDestroy {
     // 2.
     this.leds[index] = {
       index: index,
-      color: 'lightblue',
+      color: 'lightblue' as Color,
     };
   }
 }

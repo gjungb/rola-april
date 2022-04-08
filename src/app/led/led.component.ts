@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Led } from '../model/led';
+import { Color, Led } from '../model/led';
 
 /**
  * Representational / Dumb / Stateless
@@ -14,7 +14,7 @@ export class LedComponent implements OnInit {
   @Input('piLed')
   led: Led = {
     index: 0,
-    color: '#ccff22',
+    color: '#ccff22' as Color,
   };
 
   @Output()
