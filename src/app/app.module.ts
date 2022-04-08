@@ -9,6 +9,8 @@ import { LedListComponent } from './led-list/led-list.component';
 import { PiColorPipe } from './shared/pi-color.pipe';
 import { ColorFormComponent } from './color-form/color-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LedListComponent,
     PiColorPipe,
     ColorFormComponent,
+    DashboardComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

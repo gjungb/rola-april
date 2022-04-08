@@ -5,6 +5,7 @@
     <tbody>
         <tr>
             <td *ngFor="let thing of things">
+                <a [routerLink]="['.', thing.index]">Details</a>
                 <pi-led (ledChange)="changeLedColor($event)" [piLed]="thing"></pi-led>
             </td>
         </tr>
