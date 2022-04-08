@@ -7,10 +7,24 @@ import { AppComponent } from './app.component';
 import { LedComponent } from './led/led.component';
 import { LedListComponent } from './led-list/led-list.component';
 import { PiColorPipe } from './shared/pi-color.pipe';
+import { ColorFormComponent } from './color-form/color-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, LedComponent, LedListComponent, PiColorPipe],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    LedComponent,
+    LedListComponent,
+    PiColorPipe,
+    ColorFormComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

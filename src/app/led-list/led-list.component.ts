@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
-import { Subscription, takeUntil, tap, timer } from 'rxjs';
+import { delay, Observable, Subscription, takeUntil, tap, timer } from 'rxjs';
 import { Leds } from '../model/led';
 import { LedService } from '../shared/led.service';
 
+// Stateful
 @Component({
   selector: 'pi-led-list',
   templateUrl: './led-list.component.html',
@@ -10,6 +11,8 @@ import { LedService } from '../shared/led.service';
 })
 export class LedListComponent implements OnInit, OnDestroy {
   leds!: Leds;
+
+  leds$!: Observable<Leds>;
 
   private sub?: Subscription;
 
@@ -22,18 +25,12 @@ export class LedListComponent implements OnInit, OnDestroy {
       next: (value) => console.log(value),
     });
 
-    this.service
+    this.leds$ = this.service
       .readLeds()
       .pipe(
+        delay(3_000),
         tap((value) => console.log(value)),
-        takeUntil(this.destroy$)
       )
-      .subscribe({
-        next: (value) => {
-          this.leds = value;
-        },
-        complete: () => console.log('habe fertig'),
-      });
   }
 
   ngOnDestroy(): void {
