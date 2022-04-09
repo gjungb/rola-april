@@ -33,30 +33,28 @@ export class LedService {
   }
 
   /**
-   * 
-   * @param color 
-   * @param index 
+   *
+   * @param color
+   * @param index
    */
   private convertColor(color: string, index?: number): Led;
   /**
-   * 
-   * @param colors 
+   *
+   * @param colors
    */
   private convertColor(colors: string[]): Leds;
   /**
-   * 
-   * @param value 
-   * @param index 
-   * @returns 
+   *
+   * @param value
+   * @param index
+   * @returns
    */
   private convertColor(value: string | string[], index = 0): Led | Leds {
-    if (Array.isArray(value)) {
-      return value.map((color, index): Led => ({ index, color }));
-    } else {
-      return {
-        index,
-        color: value,
-      };
-    }
+    return Array.isArray(value)
+      ? value.map((color, index): Led => ({ index, color }))
+      : {
+          index,
+          color: value,
+        };
   }
 }
